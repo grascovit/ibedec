@@ -1,1 +1,1 @@
-# IBEDEC-GO
+# IBEDEC

@@ -5,14 +5,14 @@ default: &default
 
 development:
   <<: *default
-  database: ibedecgo_development
+  database: ibedec_development
 
 test:
   <<: *default
-  database: ibedecgo_test
+  database: ibedec_test
 
 production:
   <<: *default
-  database: ibedecgo_production
-  username: ibedecgo
-  password: <%= ENV["IBEDECGO_DATABASE_PASSWORD"] %>
+  database: ibedec_production
+  username: ibedec
+  password: <%= ENV["IBEDEC_DATABASE_PASSWORD"] %>
