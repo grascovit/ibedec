@@ -9,5 +9,8 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.2.1",
     "stimulus-vite-helpers": "^3.0.1"
+  },
+  "scripts": {
+    "build": "vite build --outDir public"
   }
 }

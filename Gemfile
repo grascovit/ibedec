@@ -16,5 +16,6 @@ group :development, :test do
 end
 
 group :development do
+  gem 'dockerfile-rails', '>= 1.2'
   gem 'rubocop-rails', require: false
 end
