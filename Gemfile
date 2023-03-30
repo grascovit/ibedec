@@ -18,5 +18,6 @@ end
 
 group :development do
   gem 'dockerfile-rails', '>= 1.2'
+  gem 'letter_opener', '~> 1.8.1'
   gem 'rubocop-rails', require: false
 end
