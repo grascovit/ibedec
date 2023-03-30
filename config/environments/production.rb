@@ -68,4 +68,20 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: ENV.fetch('MAILGUN_SMTP_SERVER', nil),
+    port: ENV.fetch('MAILGUN_SMTP_PORT', nil),
+    domain: ENV.fetch('MAILGUN_SMTP_DOMAIN', nil),
+    user_name: ENV.fetch('MAILGUN_SMTP_USER', nil),
+    password: ENV.fetch('MAILGUN_SMTP_PASSWORD', nil),
+    authentication: 'plain',
+    enable_starttls_auto: true
+  }
+
+  Rails.application.routes.default_url_options = {
+    host: ENV.fetch('DEFAULT_HOST', nil),
+    protocol: 'https'
+  }
 end
