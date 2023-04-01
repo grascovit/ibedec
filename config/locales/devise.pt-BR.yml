@@ -96,14 +96,14 @@ pt-BR:
       edit:
         are_you_sure: Você tem certeza?
         cancel_my_account: Cancelar minha conta
-        currently_waiting_confirmation_for_email: 'No momento esperando por: %{email}'
-        leave_blank_if_you_don_t_want_to_change_it: deixe em branco caso não queira alterá-la
-        title: Editar %{resource}
+        currently_waiting_confirmation_for_email: 'Aguardando confirmação do email %{email}'
+        leave_blank_if_you_don_t_want_to_change_it: (deixe em branco caso não queira alterá-la)
+        title: Atualizar meus dados
         unhappy: Não está contente?
         update: Atualizar
-        we_need_your_current_password_to_confirm_your_changes: precisamos da sua senha atual para confirmar suas mudanças
+        we_need_your_current_password_to_confirm_your_changes: (precisamos dela para confirmar suas mudanças)
       new:
-        sign_up: Inscrever-se
+        sign_up: Enviar
       signed_up: Bem vindo! Você realizou seu registro com sucesso.
       signed_up_but_inactive: Você se inscreveu com sucesso, porém nós não podemos autenticá-lo porque sua conta ainda não foi ativada.
       signed_up_but_locked: Você se inscreveu com sucesso. Porém nós não podemos autenticá-lo porque sua conta está bloqueada.
@@ -115,6 +115,7 @@ pt-BR:
       already_signed_out: Logout efetuado com sucesso.
       new:
         sign_in: Login
+        sign_in_button: Entrar
       signed_in: Login efetuado com sucesso.
       signed_out: Logout efetuado com sucesso.
     shared:
@@ -125,7 +126,7 @@ pt-BR:
         forgot_your_password: Esqueceu sua senha?
         sign_in: Login
         sign_in_with_provider: Entrar com %{provider}
-        sign_up: Inscrever-se
+        sign_up: Crie sua conta
       minimum_password_length:
         one: "(Mínimo de %{count} caractere)"
         other: "(Mínimo de %{count} caracteres)"
@@ -143,5 +144,5 @@ pt-BR:
       not_found: não encontrado
       not_locked: não foi bloqueado
       not_saved:
-        one: 'Não foi possível salvar %{resource}: 1 erro'
-        other: 'Não foi possível salvar %{resource}: %{count} erros.'
+        one: Por favor, revise e tente novamente
+        other: Por favor, revise e tente novamente

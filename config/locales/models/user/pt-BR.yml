@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      user:
+        one: "Usuário"
+        other: "Usuários"
+    attributes:
+      user:
+        first_name: "Nome"
+        last_name: "Sobrenome"
+        phone_number: "Celular"

@@ -35,5 +35,8 @@ module Ibedec
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    I18n.available_locales = %i[en pt-BR]
+    I18n.default_locale = :'pt-BR'
   end
 end

@@ -1,0 +1,44 @@
+<main class="isolate pb-24">
+  <div class="flex min-h-full flex-col justify-center mt-40 px-6 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-md">
+      <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
+        <%= t('devise.sessions.new.sign_in') %>
+      </h2>
+    </div>
+
+    <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+      <div class="bg-white px-4 py-8 shadow sm:rounded-lg sm:px-10">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'space-y-6' }) do |form| %>
+          <div>
+            <%= form.label :email, class: 'block text-sm font-medium leading-6 text-gray-900' %>
+            <div class="mt-2">
+              <%= form.email_field :email, autofocus: true, autocomplete: 'email', class: 'block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-ibedec-blue-500 sm:text-sm sm:leading-6' %>
+            </div>
+          </div>
+
+          <div>
+            <%= form.label :password, class: 'block text-sm font-medium leading-6 text-gray-900' %>
+            <div class="mt-2">
+              <%= form.password_field :password, autocomplete: 'current-password', class: 'block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-ibedec-blue-500 sm:text-sm sm:leading-6' %>
+            </div>
+          </div>
+
+          <% if devise_mapping.rememberable? %>
+            <div class="flex items-center">
+              <%= form.check_box :remember_me, class: 'h-4 w-4 rounded border-gray-300 text-ibedec-blue-500 focus:ring-ibedec-blue-500' %>
+              <%= form.label :remember_me, class: 'ml-2 block text-sm text-gray-900' %>
+            </div>
+          <% end %>
+
+          <div>
+            <%= form.submit t('devise.sessions.new.sign_in_button'), class: 'cursor-pointer flex w-full justify-center rounded-md whitespace-normal	bg-ibedec-blue-100 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-ibedec-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ibedec-blue-500' %>
+          </div>
+        <% end %>
+
+        <div class="mt-6">
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
