@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       colors: {
         'ibedec-blue': {
+          50: '#eff1fa',
           100: '#4455c5',
           200: '#3a4bbb',
           300: '#3545ac',
@@ -19,6 +20,7 @@ module.exports = {
           900: '#181f4e',
         },
         'ibedec-yellow': {
+          50: '#fffdeb',
           100: '#feeb5d',
           200: '#fee948',
           300: '#fee634',
@@ -29,6 +31,9 @@ module.exports = {
           800: '#cbb301',
           900: '#b7a101',
         }
+      },
+      animation: {
+        'bounce-slow': 'bounce 1.5s infinite',
       }
     },
   },
