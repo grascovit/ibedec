@@ -1,0 +1,50 @@
+<main class="isolate pb-24">
+  <!-- Hero section -->
+  <div class="mx-auto max-w-7xl mt-40 px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl lg:mx-0">
+      <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+        Últimas notícias
+      </h1>
+      <p class="relative mt-6 text-xl leading-8 text-gray-600 max-w-4xl text-justify">
+        Fique por dentro das novidades sobre os direitos do consumidor e acompanhe o trabalho do IBEDEC na defesa dos seus interesses.
+      </p>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="mx-auto mt-16 max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-16 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+      <% if @posts.any? %>
+        <% @posts.each do |post| %>
+          <article class="flex flex-col items-start justify-between">
+            <div class="relative w-full">
+              <%= link_to post, class: '' do %>
+                <%= image_tag(url_for(post.cover_image), class: 'aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]') %>
+              <% end %>
+            </div>
+            <%= link_to post, class: 'w-full' do %>
+              <div class="mt-8 flex items-center gap-x-4 text-xs">
+                <time datetime="2020-03-16" class="text-gray-500">
+                  <%= l(post.published_at.to_date, format: :long) %>
+                </time>
+              </div>
+              <div class="group relative">
+                <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                  <span class="absolute inset-0"></span>
+                  <%= post.title %>
+                </h3>
+                <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+                  <%= post.body.truncate(120) %>
+                </p>
+              </div>
+            <% end %>
+          </article>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <% if @posts.any? %>
+    <%= paginate @posts %>
+  <% end %>
+</main>

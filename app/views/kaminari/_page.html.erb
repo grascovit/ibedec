@@ -1,0 +1,21 @@
+<%# Link showing page number
+  - available local variables
+    page:          a page object for "this" page
+    url:           url to this page
+    current_page:  a page object for the currently displayed page
+    total_pages:   total number of pages
+    per_page:      number of items to fetch per page
+    remote:        data-remote
+-%>
+<% if page.current? %>
+  <% css_class = 'relative z-10 inline-flex items-center bg-ibedec-blue-600 px-2 py-1 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ibedec-blue-600 sm:px-4 sm:py-2 ' %>
+  <% css_class += 'rounded-l-md' if page.first? %>
+  <% css_class += 'rounded-r-md' if page.last? %>
+  <%= link_to page, url, class: css_class, remote: remote, rel: page.rel %>
+<% else %>
+  <%= link_to page, url, class: 'relative inline-flex items-center px-2 py-1 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 sm:px-4 sm:py-2', remote: remote, rel: page.rel %>
+<% end %>
+
+<% if false %>
+  <div class="rounded-l-md rounded-r-md"></div>
+<% end %>
