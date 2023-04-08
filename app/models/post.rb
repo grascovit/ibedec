@@ -7,6 +7,8 @@ class Post < ApplicationRecord
   has_one_attached :cover_image
   has_many_attached :images
 
+  before_save :set_slug
+
   validates :title, :body, :cover_image, presence: true
 
   scope :published, -> { where.not(published_at: nil) }
@@ -15,4 +17,10 @@ class Post < ApplicationRecord
 
     order("posts.published_at #{order} NULLS LAST, posts.created_at #{order}")
   }
+
+  private
+
+  def set_slug
+    self.slug = title.parameterize
+  end
 end

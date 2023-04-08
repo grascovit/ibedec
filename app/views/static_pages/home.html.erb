@@ -34,11 +34,11 @@
       <% @posts.each do |post| %>
         <article class="flex flex-col items-start justify-between">
           <div class="relative w-full">
-            <%= link_to post, class: '' do %>
+            <%= link_to post_path(post.slug) do %>
               <%= image_tag(url_for(post.cover_image), class: 'aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]') %>
             <% end %>
           </div>
-          <%= link_to post, class: 'w-full' do %>
+          <%= link_to post_path(post.slug), class: 'w-full' do %>
             <div class="mt-8 flex items-center gap-x-4 text-xs">
               <time datetime="2020-03-16" class="text-gray-500">
                 <%= l(post.published_at.to_date, format: :long) %>
