@@ -8,6 +8,9 @@ processes = []
 
 [env]
 
+[build.args]
+  NODE_OPTIONS = "--max-old-space-size=1536"
+
 [experimental]
   auto_rollback = true
 
