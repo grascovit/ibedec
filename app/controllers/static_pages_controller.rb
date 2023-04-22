@@ -10,4 +10,12 @@ class StaticPagesController < ApplicationController
   def about; end
 
   def contact; end
+
+  def consumer_content; end
+
+  def construction_content; end
+
+  def sfh_sfi_content; end
+
+  def social_security_content; end
 end
