@@ -1,0 +1,19 @@
+pt-BR:
+  activerecord:
+    models:
+      judgement:
+        one: "Decisão"
+        other: "Decisões"
+    attributes:
+      judgement:
+        title: "Título"
+        category: "Categoria"
+        categories:
+          consumer: "Consumidor"
+          construction: "Construtoras"
+          sfh_sfi: "SFH e SFI"
+          social_security: "Previdenciário"
+        published_at: "Data de publicação"
+        user: "Usuário"
+        created_at: "Criada em"
+        updated_at: "Atualizada em"

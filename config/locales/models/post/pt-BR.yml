@@ -1,0 +1,15 @@
+pt-BR:
+  activerecord:
+    models:
+      post:
+        one: "Notícia"
+        other: "Notícias"
+    attributes:
+      post:
+        title: "Título"
+        body: "Texto"
+        slug: "Identificador"
+        published_at: "Data de publicação"
+        user: "Usuário"
+        created_at: "Criada em"
+        updated_at: "Atualizada em"

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'contato' => 'static_pages#contact', as: :contact
   get 'noticias' => 'posts#index', as: :posts
   get 'noticias/:slug' => 'posts#show', as: :post
+  get 'decisoes' => 'judgements#index', as: :judgements
   get 'politica-de-privacidade' => 'static_pages#privacy_policy', as: :privacy_policy
   get 'sobre' => 'static_pages#about', as: :about
 

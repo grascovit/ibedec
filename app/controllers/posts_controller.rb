@@ -13,7 +13,6 @@ class PostsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_post
     @post = Post.published.find_by!(slug: params[:slug])
   end

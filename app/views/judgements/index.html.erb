@@ -1,0 +1,46 @@
+<div class="pb-16 pt-24 sm:pt-32">
+  <!-- Hero section -->
+  <div class="mx-auto max-w-7xl mt-10 px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl lg:mx-0">
+      <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+        Decisões
+      </h1>
+      <p class="relative mt-6 text-xl leading-8 text-gray-600 max-w-4xl text-justify">
+        Acompanhe as principais decisões judiciais relacionadas aos direitos do consumidor no Brasil.
+      </p>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="grid gap-16 pt-10 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
+      <% if @judgements.any? %>
+        <% @judgements.each do |judgement| %>
+          <div>
+            <%= link_to url_for(judgement.file), class: 'mt-2 block', target: '_blank' do %>
+              <p class="text-xl font-semibold text-gray-900">
+                <%= judgement.title %>
+              </p>
+              <span class="inline-flex items-center rounded-full mt-1 -ml-0.5 px-3 py-0.5 text-sm font-medium bg-green-100 text-green-800">
+                <%= t("activerecord.attributes.judgement.categories.#{judgement.category}") %>
+              </span>
+              <p class="text-sm text-gray-500 mt-2">
+                Publicada em
+                <time datetime="<%= judgement.published_at.strftime('%Y-%m-%d') %>">
+                  <%= l(judgement.published_at, format: :long) %>
+                </time>
+              </p>
+              <p class="mt-1 text-base font-semibold text-ibedec-blue-100 hover:text-ibedec-blue-400">
+                Leia na íntegra <span aria-hidden="true">→</span>
+              </p>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <% if @judgements.any? %>
+    <%= paginate @judgements %>
+  <% end %>
+</div>
