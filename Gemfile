@@ -6,6 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.2.1'
 
 gem 'aws-sdk-s3', '~> 1'
+gem 'cancancan', '~> 3'
 gem 'devise', '~> 4.9.0'
 gem 'image_processing', '~> 1'
 gem 'kaminari', '~> 1.2.2'

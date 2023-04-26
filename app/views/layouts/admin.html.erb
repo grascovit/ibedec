@@ -6,14 +6,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= vite_client_tag %>
-    <%= vite_javascript_tag 'application' %>
-    <%= vite_stylesheet_tag 'application' %>
+    <%= vite_javascript_tag 'admin' %>
+    <%= vite_stylesheet_tag 'admin' %>
   </head>
 
   <body class="bg-white min-h-screen">
     <%= render 'shared/flash_messages' %>
-    <%= render 'application/menu' %>
+    <%= render 'admin/menu' %>
     <%= yield %>
-    <%= render 'application/footer' %>
   </body>
 </html>

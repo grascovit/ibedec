@@ -11,5 +11,6 @@ pt-BR:
         slug: "Identificador"
         published_at: "Data de publicação"
         user: "Usuário"
+        cover_image: "Imagem em destaque"
         created_at: "Criada em"
         updated_at: "Atualizada em"

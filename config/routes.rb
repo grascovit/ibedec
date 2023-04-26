@@ -19,4 +19,11 @@ Rails.application.routes.draw do
     get 'previdenciario' => 'static_pages#social_security_content', as: :social_security_content
     get 'sfh-sfi' => 'static_pages#sfh_sfi_content', as: :sfh_sfi_content
   end
+
+  namespace 'admin' do
+    root to: 'posts#index'
+
+    resources :judgements, path: :decisoes
+    resources :posts, path: :noticias
+  end
 end
