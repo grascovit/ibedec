@@ -7,6 +7,7 @@ primary_region = "gru"
 processes = []
 
 [env]
+  CALENDLY_URL = "https://calendly.com/rascovit/atendimento-presencial-ibedec"
 
 [build.args]
   NODE_OPTIONS = "--max-old-space-size=1536"
