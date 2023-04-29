@@ -20,10 +20,10 @@ RUN gem update --system --no-document && \
 
 # Install packages needed to build gems and node modules
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential curl libpq-dev node-gyp pkg-config python-is-python3
+    apt-get install --no-install-recommends -y build-essential curl libpq-dev libvips node-gyp pkg-config python-is-python3
 
 # Install Node.js
-ARG NODE_VERSION=16.10.0
+ARG NODE_VERSION=18.16.0
 ENV PATH=/usr/local/node/bin:$PATH
 RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz -C /tmp/ && \
     /tmp/node-build-master/bin/node-build "${NODE_VERSION}" /usr/local/node && \
@@ -43,13 +43,11 @@ COPY --link . .
 
 # Install packages needed for deployment
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y postgresql-client && \
+    apt-get install --no-install-recommends -y imagemagick libvips postgresql-client && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Run and own the application files as a non-root user for security
 RUN useradd rails --home /rails --shell /bin/bash
-RUN chown -R rails:rails /rails
-USER rails:rails
 
 # Deployment options
 ENV RAILS_LOG_TO_STDOUT="1" \
