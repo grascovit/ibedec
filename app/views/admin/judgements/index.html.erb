@@ -3,11 +3,11 @@
     <div class="sm:flex sm:items-center">
       <div class="sm:flex-auto">
         <h1 class="text-2xl font-semibold leading-6 text-gray-900 sm:text-3xl">
-          Notícias
+          Decisões
         </h1>
       </div>
       <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-        <%= link_to 'Cadastrar notícia', new_admin_post_path, class: 'block rounded-md bg-ibedec-blue-100 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-ibedec-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ibedec-blue-600' %>
+        <%= link_to 'Cadastrar decisão', new_admin_judgement_path, class: 'block rounded-md bg-ibedec-blue-100 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-ibedec-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ibedec-blue-600' %>
       </div>
     </div>
     <div class="mt-8 flow-root">
@@ -28,26 +28,26 @@
             </tr>
             </thead>
             <tbody class="divide-y divide-gray-200">
-              <% @posts.each do |post| %>
+              <% @judgements.each do |judgement| %>
                 <tr>
                   <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
-                    <%= post.title %>
+                    <%= judgement.title %>
                   </td>
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                    <%= l(post.published_at, format: :long) %>
+                    <%= l(judgement.published_at, format: :long) %>
                   </td>
                   <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                    <%= link_to 'Editar', edit_admin_post_path(post), class: 'text-ibedec-blue-600 hover:text-ibedec-blue-600' %>
+                    <%= link_to 'Editar', edit_admin_judgement_path(judgement), class: 'text-ibedec-blue-600 hover:text-ibedec-blue-600' %>
                   </td>
                   <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                    <%= link_to 'Apagar', admin_post_path(post), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Você tem certeza?' }, class: 'text-red-600 hover:text-red-900' %>
+                    <%= link_to 'Apagar', admin_judgement_path(judgement), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Você tem certeza?' }, class: 'text-red-600 hover:text-red-900' %>
                   </td>
                 </tr>
               <% end %>
             </tbody>
           </table>
 
-          <%= paginate @posts %>
+          <%= paginate @judgements %>
         </div>
       </div>
     </div>

@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
 
   add_flash_types :success
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_path, alert: exception.message
+  end
+
   protected
 
   def configure_permitted_parameters

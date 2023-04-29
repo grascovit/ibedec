@@ -15,5 +15,6 @@ pt-BR:
           social_security: "Previdenciário"
         published_at: "Data de publicação"
         user: "Usuário"
+        file: "Arquivo"
         created_at: "Criada em"
         updated_at: "Atualizada em"
