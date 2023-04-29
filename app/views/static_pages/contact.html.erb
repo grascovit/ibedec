@@ -1,16 +1,19 @@
+<% content_for(:head_tags) do %>
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<% end %>
+
 <div class="pb-16 pt-24 sm:pt-32">
   <div class="mx-auto max-w-7xl mt-10 px-6 lg:px-8">
     <div class="mx-auto lg:mx-0">
       <h1 class="max-w-2xl text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
         Fale com a gente
       </h1>
-      <div class="grid grid-cols-1 mt-6 lg:grid-cols-2 lg:gap-8">
+      <div data-controller="calendly" data-calendly-url-value="<%= ENV['CALENDLY_URL'] %>" class="grid grid-cols-1 mt-6 lg:grid-cols-2 lg:gap-8">
         <p class="text-xl leading-8 text-gray-600 max-w-4xl text-justify">
           O IBEDEC está presente em diferentes localidades mas você também pode agendar uma vídeo chamada conosco.
         </p>
-        <a href="#" class="w-fit h-fit justify-self-center self-center mt-8 rounded-md bg-ibedec-blue-100 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-ibedec-blue-400 hover:text-ibedec-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ibedec-blue-600 lg:mt-0">
-          Agende seu atendimento gratuito
-        </a>
+        <%= link_to 'Agende seu atendimento gratuito', '', class: 'w-fit h-fit justify-self-center self-center mt-8 rounded-md bg-ibedec-blue-100 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-ibedec-blue-400 hover:text-ibedec-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ibedec-blue-600 lg:mt-0', data: { action: 'click->calendly#openModal' } %>
       </div>
     </div>
     <div class="mx-auto mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-2 lg:gap-8">

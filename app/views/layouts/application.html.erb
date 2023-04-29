@@ -8,6 +8,9 @@
     <%= vite_client_tag %>
     <%= vite_javascript_tag 'application' %>
     <%= vite_stylesheet_tag 'application' %>
+    <% if content_for?(:head_tags) %>
+      <%= yield(:head_tags) %>
+    <% end %>
   </head>
 
   <body class="bg-white min-h-screen">
