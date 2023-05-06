@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     get 'sfh-sfi' => 'static_pages#sfh_sfi_content', as: :sfh_sfi_content
   end
 
+  resources :newsletter_subscribers, only: %i[create]
+
   namespace 'admin' do
     root to: 'posts#index'
 

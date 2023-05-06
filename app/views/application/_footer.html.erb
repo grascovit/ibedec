@@ -3,15 +3,15 @@
     <div class="max-w-xl text-3xl font-bold tracking-tight text-white sm:text-4xl lg:col-span-7">
       <h2 class="inline sm:block lg:inline xl:block">Quer receber nossas notícias por email?</h2>
     </div>
-    <form class="w-full max-w-md lg:col-span-5 lg:pt-2">
+    <%= form_with(model: NewsletterSubscriber.new, url: newsletter_subscribers_path, class: 'w-full max-w-md lg:col-span-5 lg:pt-2') do |form| %>
       <div class="flex gap-x-4">
         <label for="email-address" class="sr-only">Email</label>
-        <input id="email-address" name="email" type="email" autocomplete="email" required class="min-w-0 flex-auto rounded-md border-0 bg-white/10 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-white/75 focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6" placeholder="Informe seu email">
-        <button type="submit" class="flex-none rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-ibedec-blue-600 shadow-sm hover:bg-ibedec-blue-100 hover:text-ibedec-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Inscrever</button>
+        <%= form.email_field :email, autocomplete: 'email', placeholder: 'Informe seu email', required: true, class: 'min-w-0 flex-auto rounded-md border-0 bg-white/10 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-white/75 focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6' %>
+        <%= form.submit 'Inscrever', class: 'flex-none rounded-md cursor-pointer bg-white px-3.5 py-2.5 text-sm font-semibold text-ibedec-blue-600 shadow-sm hover:bg-ibedec-blue-100 hover:text-ibedec-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white' %>
       </div>
       <p class="mt-4 text-sm leading-6 text-gray-300">
         Leia nossa <%= link_to 'política de privacidade', privacy_policy_path, class: 'font-semibold text-white hover:text-ibedec-yellow-500' %>.
       </p>
-    </form>
+    <% end %>
   </div>
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_26_005910) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_29_205425) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -50,6 +50,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_26_005910) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_judgements_on_user_id"
+  end
+
+  create_table "newsletter_subscribers", force: :cascade do |t|
+    t.string "email"
+    t.datetime "unsubscribed_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "posts", force: :cascade do |t|
