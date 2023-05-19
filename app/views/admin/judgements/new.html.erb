@@ -17,6 +17,18 @@
           </div>
 
           <div>
+            <%= form.label :category, class: 'block text-sm font-medium leading-6 text-gray-900' %>
+            <div class="mt-2">
+              <%= form.select :category,
+                              options_for_select(
+                                Judgement::CATEGORIES.map { |category| t("activerecord.attributes.judgement.categories.#{category}") }
+                              ),
+                              { prompt: true },
+                              class: 'block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-ibedec-blue-500 sm:text-sm sm:leading-6' %>
+            </div>
+          </div>
+
+          <div>
             <%= form.label :published_at, class: 'block text-sm font-medium leading-6 text-gray-900' %>
             <div class="mt-2">
               <%= form.date_field :published_at, value: Date.today, class: 'block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-ibedec-blue-500 sm:text-sm sm:leading-6' %>

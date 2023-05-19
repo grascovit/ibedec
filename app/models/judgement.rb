@@ -2,6 +2,7 @@
 
 class Judgement < ApplicationRecord
   VALID_SORT_ORDERS = %i[asc desc].freeze
+  CATEGORIES = %i[consumer construction sfh_sfi social_security].freeze
 
   belongs_to :user
   has_one_attached :file
