@@ -35,7 +35,7 @@ module Admin
     private
 
     def judgement_params
-      params.require(:judgement).permit(:title, :body, :category, :slug, :published_at)
+      params.require(:judgement).permit(:title, :body, :category, :slug, :published_at, :file)
     end
   end
 end
