@@ -29,14 +29,17 @@ RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz
     /tmp/node-build-master/bin/node-build "${NODE_VERSION}" /usr/local/node && \
     rm -rf /tmp/node-build-master
 
+# Install Yarn
+RUN npm install -g yarn
+
 # Install application gems
 COPY --link Gemfile Gemfile.lock ./
 RUN bundle install && \
     rm -rf ~/.bundle/ $BUNDLE_PATH/ruby/*/cache $BUNDLE_PATH/ruby/*/bundler/gems/*/.git
 
 # Install node modules
-COPY --link package.json package-lock.json ./
-RUN npm install
+COPY --link package.json yarn.lock ./
+RUN yarn install
 
 # Copy application code
 COPY --link . .
