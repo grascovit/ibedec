@@ -14,7 +14,7 @@ module Admin
       if @post.save
         redirect_to admin_posts_path, success: 'Notícia criada com sucesso'
       else
-        render :new
+        render :new, status: :unprocessable_entity
       end
     end
 
@@ -22,7 +22,7 @@ module Admin
       if @post.update(post_params)
         redirect_to admin_posts_path, success: 'Notícia atualizada com sucesso'
       else
-        render :edit
+        render :edit, status: :unprocessable_entity
       end
     end
 

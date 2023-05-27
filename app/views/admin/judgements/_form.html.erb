@@ -1,0 +1,12 @@
+<%= form_with(model: judgement, url: judgement.persisted? ? admin_judgement_path(judgement) : admin_judgements_path, html: { class: 'space-y-6' }) do |form| %>
+  <%= render 'shared/form/input', form: form, attribute: :title, kind: :text_field %>
+  <%= render 'shared/form/select',
+             form: form,
+             attribute: :category,
+             choices: options_for_select(
+               Judgement::CATEGORIES.map { |category| t("activerecord.attributes.judgement.categories.#{category}") }
+             ) %>
+  <%= render 'shared/form/input', form: form, attribute: :published_at, kind: :date_field %>
+  <%= render 'shared/form/file_input', form: form, attribute: :file %>
+  <%= render 'shared/form/submit_button', form: form %>
+<% end %>

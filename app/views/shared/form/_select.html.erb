@@ -1,0 +1,22 @@
+<% has_errors = form.object.errors.include?(attribute) %>
+<% css_class ||= 'block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 sm:text-sm sm:leading-6' %>
+
+<div>
+  <%= form.label attribute, class: 'block text-sm font-medium leading-6 text-gray-900' %>
+  <div class="mt-2">
+    <%= form.select attribute, choices, { prompt: true }, class: "#{css_class} #{has_errors ? 'ring-red-500 focus:ring-red-500' : 'ring-gray-300 focus:ring-ibedec-blue-500'}" %>
+  </div>
+  <% if has_errors %>
+    <div class="text-xs text-red-600 mt-2">
+      <% form.object.errors.full_messages_for(attribute).each do |error_message| %>
+        <div>
+          <%= error_message %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<% if false %>
+  <div class="ring-red-500 focus:ring-red-500 ring-gray-300 focus:ring-ibedec-blue-500 text-xs text-red-600 mt-2"></div>
+<% end %>

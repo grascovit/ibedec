@@ -9,9 +9,11 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.2.1",
     "@hotwired/turbo": "^7.3.0",
+    "@rails/actiontext": "^7.0.5",
     "@tailwindcss/forms": "^0.5.3",
     "alpinejs": "^3.12.0",
-    "stimulus-vite-helpers": "^3.0.1"
+    "stimulus-vite-helpers": "^3.0.1",
+    "trix": "^2.0.5"
   },
   "scripts": {
     "build": "vite build --outDir public"

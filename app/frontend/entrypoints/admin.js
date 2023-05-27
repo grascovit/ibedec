@@ -1,3 +1,6 @@
+import 'trix'
+import '@rails/actiontext'
+
 import * as Turbo from '@hotwired/turbo'
 Turbo.start()
 

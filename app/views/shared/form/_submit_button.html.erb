@@ -1,0 +1,5 @@
+<div>
+  <%= form.submit t("helpers.submit.#{form.object.persisted? ? 'update' : 'create'}",
+                  model: t("activerecord.models.#{form.object.class.to_s.underscore}.one")),
+                  class: 'cursor-pointer flex w-full justify-center rounded-md whitespace-normal bg-ibedec-blue-100 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-ibedec-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ibedec-blue-500' %>
+</div>

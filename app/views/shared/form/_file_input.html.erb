@@ -1,0 +1,22 @@
+<% has_errors = form.object.errors.include?(attribute) %>
+<% css_class ||= 'block w-full py-1.5 text-gray-900 sm:text-sm sm:leading-6' %>
+
+<div>
+  <%= form.label attribute, class: 'block text-sm font-medium leading-6 text-gray-900' %>
+  <div class="mt-2">
+    <%= form.file_field attribute, class: css_class %>
+  </div>
+  <% if has_errors %>
+    <div class="text-xs text-red-600 mt-2">
+      <% form.object.errors.full_messages_for(attribute).each do |error_message| %>
+        <div>
+          <%= error_message %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<% if false %>
+  <div class="text-xs text-red-600 mt-2"></div>
+<% end %>

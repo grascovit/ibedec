@@ -14,7 +14,7 @@ module Admin
       if @judgement.save
         redirect_to admin_judgements_path, success: 'Decisão criada com sucesso'
       else
-        render :new
+        render :new, status: :unprocessable_entity
       end
     end
 
@@ -22,7 +22,7 @@ module Admin
       if @judgement.update(judgement_params)
         redirect_to admin_judgements_path, success: 'Decisão atualizada com sucesso'
       else
-        render :edit
+        render :edit, status: :unprocessable_entity
       end
     end
 
