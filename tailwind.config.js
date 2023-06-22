@@ -30,6 +30,9 @@ module.exports = {
           700: '#dfc501',
           800: '#cbb301',
           900: '#b7a101',
+        },
+        'whatsapp-green': {
+          500: '#3ac04c'
         }
       },
       animation: {
