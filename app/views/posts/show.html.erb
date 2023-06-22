@@ -1,5 +1,5 @@
 <% content_for(:head_tags) do %>
-  <meta property="og:url" content="<%= post_url(@post) %>" />
+  <meta property="og:url" content="<%= post_url(@post.slug) %>" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="<%= @post.title %>" />
   <meta property="og:description" content="<%= @post.body.to_plain_text.truncate(160) %>" />
