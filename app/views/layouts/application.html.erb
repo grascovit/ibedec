@@ -5,6 +5,11 @@
     <meta name="description" content="O IBEDEC é uma organização sem fins lucrativos que atua na defesa dos direitos do consumidor no Brasil. O instituto foi fundado em 2001 e tem como objetivo principal promover a educação, a conscientização e a defesa dos consumidores brasileiros, visando a proteção dos seus direitos e interesses.">
     <title>IBEDEC</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <% if Rails.env.development? %>
+      <link rel="canonical" href="<%= canonical_url %>" />
+    <% end %>
+
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
