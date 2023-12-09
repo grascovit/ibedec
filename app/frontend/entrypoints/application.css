@@ -1,4 +1,4 @@
-@import 'tinymce.scss';
+@import 'tinymce.css';
 
 @tailwind base;
 @tailwind components;
