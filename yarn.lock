@@ -185,20 +185,6 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@rails/actiontext@^7.0.5":
-  version "7.0.5"
-  resolved "https://registry.yarnpkg.com/@rails/actiontext/-/actiontext-7.0.5.tgz#b2dca679c18c359ca69ce5661ecde2948253aaa6"
-  integrity sha512-D/tzDNyO/dPVi2kyokL5QCOB/CyEQ3iI8m5ORB1YlA0aGbP3rjFxUWLywp4nGed16PZY/zXiVD2tSjjs5XkLaQ==
-  dependencies:
-    "@rails/activestorage" ">= 7.0.0-alpha1"
-
-"@rails/activestorage@>= 7.0.0-alpha1":
-  version "7.0.5"
-  resolved "https://registry.yarnpkg.com/@rails/activestorage/-/activestorage-7.0.5.tgz#0e8fe255a422e5cb9f4e673e02fca845f32a50c1"
-  integrity sha512-lTOlsVsjz1OYDFRD2SKNH9j2TOA/LTrrIPgRSKyyD3CvJnD1bc65PQt/z6qB1hGqYmtUiklns+SjVWb9xYEqaA==
-  dependencies:
-    spark-md5 "^3.0.1"
-
 "@tailwindcss/forms@^0.5.3":
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/@tailwindcss/forms/-/forms-0.5.3.tgz#e4d7989686cbcaf416c53f1523df5225332a86e7"
@@ -733,11 +719,6 @@ source-map-js@^1.0.2:
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.0.2.tgz#adbc361d9c62df380125e7f161f71c826f1e490c"
   integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==
 
-spark-md5@^3.0.1:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/spark-md5/-/spark-md5-3.0.2.tgz#7952c4a30784347abcee73268e473b9c0167e3fc"
-  integrity sha512-wcFzz9cDfbuqe0FZzfi2or1sgyIrsDwmPwfZC4hiNidPdPINjeUwNfv5kldczoEAcjl9Y1L3SM7Uz2PUEQzxQw==
-
 stimulus-vite-helpers@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/stimulus-vite-helpers/-/stimulus-vite-helpers-3.0.1.tgz#930a3c88b01e0754d43e5250ed66f09e5ad242c8"
@@ -804,17 +785,22 @@ thenify-all@^1.0.0:
   dependencies:
     any-promise "^1.0.0"
 
+tinymce-i18n@^23.12.4:
+  version "23.12.4"
+  resolved "https://registry.yarnpkg.com/tinymce-i18n/-/tinymce-i18n-23.12.4.tgz#f00a220d5f434ce0d2850b5ea7f65b13a5747b72"
+  integrity sha512-EIbYrJBasx7T2iZxJ2jQT1xz0ET+PKi/Fzv6KPte0suu1MrCVBYw3Thsne1TCzPbcashajevmFX5z2wQlXqssQ==
+
+tinymce@^6.8.1:
+  version "6.8.1"
+  resolved "https://registry.yarnpkg.com/tinymce/-/tinymce-6.8.1.tgz#840f514b4a175f55042cbe2fce548b10fc38208b"
+  integrity sha512-WYPvMXIjBrXM/oBiqGCbT2a8ptiO3TWXm/xxPWDCl8SxRKMW7Rfp0Lk190E9fXmX6uh9lJMRCnmKHzvryz0ftA==
+
 to-regex-range@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/to-regex-range/-/to-regex-range-5.0.1.tgz#1648c44aae7c8d988a326018ed72f5b4dd0392e4"
   integrity sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==
   dependencies:
     is-number "^7.0.0"
-
-trix@^2.0.5:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/trix/-/trix-2.0.5.tgz#f54880ab38e24d47829a04e04afaf03a8607f772"
-  integrity sha512-OiCbDf17F7JahEwhyL1MvK9DxAAT1vkaW5sn+zpwfemZAcc4RfQB4ku18/1mKP58LRwBhjcy+6TBho7ciXz52Q==
 
 ts-interface-checker@^0.1.9:
   version "0.1.13"

@@ -5,7 +5,6 @@ class Post < ApplicationRecord
 
   belongs_to :user
   has_one_attached :cover_image
-  has_rich_text :body
 
   before_save :set_slug
 

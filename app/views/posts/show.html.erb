@@ -1,8 +1,10 @@
+<% post_presenter = PostPresenter.new(@post) %>
+
 <% content_for(:head_tags) do %>
   <meta property="og:url" content="<%= post_url(@post.slug) %>" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="<%= @post.title %>" />
-  <meta property="og:description" content="<%= @post.body.to_plain_text.truncate(160) %>" />
+  <meta property="og:description" content="<%= post_presenter.body_text.truncate(160) %>" />
   <meta property="og:image" content="<%= rails_blob_url(@post.cover_image) %>" />
 <% end %>
 
@@ -14,8 +16,8 @@
           <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             <%= @post.title %>
           </h1>
-          <div class="mt-6 max-w-xl prose text-justify sm:mt-10">
-            <%= @post.body %>
+          <div class="mt-6 max-w-xl tinymce-content text-justify sm:mt-10">
+            <%= raw(@post.body) %>
           </div>
         </div>
         <div class="mt-10 flex">
