@@ -1,6 +1,6 @@
 <%= form_with(model: post, url: post.persisted? ? admin_post_path(post) : admin_posts_path, html: { class: 'space-y-6' }) do |form| %>
   <%= render 'shared/form/input', form: form, attribute: :title, kind: :text_field %>
-  <%= render 'shared/form/input', form: form, attribute: :body, kind: :rich_text_area, css_class: 'trix-content block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6' %>
+  <%= render 'shared/form/quill', form: form, attribute: :body %>
   <%= render 'shared/form/input', form: form, attribute: :published_at, kind: :date_field %>
   <%= render 'shared/form/file_input', form: form, attribute: :cover_image %>
   <%= render 'shared/form/submit_button', form: form %>

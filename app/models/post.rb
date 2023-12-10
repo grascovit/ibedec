@@ -5,11 +5,11 @@ class Post < ApplicationRecord
 
   belongs_to :user
   has_one_attached :cover_image
-  has_rich_text :body
 
   before_save :set_slug
 
-  validates :title, :body, :published_at, :cover_image, presence: true
+  validates :title, :published_at, :cover_image, presence: true
+  validate :body_has_text
 
   scope :published, -> { where.not(published_at: nil) }
   scope :sorted_by_date, lambda { |order|
@@ -22,5 +22,9 @@ class Post < ApplicationRecord
 
   def set_slug
     self.slug = title.parameterize
+  end
+
+  def body_has_text
+    errors.add(:body, :blank) if Nokogiri::HTML(body).text.blank?
   end
 end

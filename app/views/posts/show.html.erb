@@ -2,7 +2,7 @@
   <meta property="og:url" content="<%= post_url(@post.slug) %>" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="<%= @post.title %>" />
-  <meta property="og:description" content="<%= @post.body.to_plain_text.truncate(160) %>" />
+  <meta property="og:description" content="<%= @post.body.truncate(160) %>" />
   <meta property="og:image" content="<%= rails_blob_url(@post.cover_image) %>" />
 <% end %>
 
@@ -15,7 +15,7 @@
             <%= @post.title %>
           </h1>
           <div class="mt-6 max-w-xl prose text-justify sm:mt-10">
-            <%= @post.body %>
+            <%= raw(@post.body) %>
           </div>
         </div>
         <div class="mt-10 flex">
