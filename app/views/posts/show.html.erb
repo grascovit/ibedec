@@ -1,8 +1,10 @@
+<% post_presenter = PostPresenter.new(@post) %>
+
 <% content_for(:head_tags) do %>
   <meta property="og:url" content="<%= post_url(@post.slug) %>" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="<%= @post.title %>" />
-  <meta property="og:description" content="<%= @post.body.truncate(160) %>" />
+  <meta property="og:description" content="<%= post_presenter.body_text.truncate(160) %>" />
   <meta property="og:image" content="<%= rails_blob_url(@post.cover_image) %>" />
 <% end %>
 

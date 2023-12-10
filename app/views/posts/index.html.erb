@@ -16,6 +16,7 @@
     <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-16 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
       <% if @posts.any? %>
         <% @posts.each do |post| %>
+          <% post_presenter = PostPresenter.new(post) %>
           <article class="flex flex-col items-start">
             <div class="relative w-full">
               <%= link_to post_path(post.slug) do %>
@@ -34,7 +35,7 @@
                   <%= post.title %>
                 </h3>
                 <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
-                  <%= post.body.truncate(120) %>
+                  <%= post_presenter.body_text.truncate(120) %>
                 </p>
               </div>
             <% end %>
