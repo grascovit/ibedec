@@ -1,3 +1,71 @@
+.quill-content h1,
+.quill-content h2,
+.quill-content h3,
+.quill-content h4,
+.quill-content h5,
+.quill-content h6,
+.quill-content blockquote,
+.quill-content p,
+.quill-content hr,
+.quill-content abbr,
+.quill-content b,
+.quill-content strong,
+.quill-content i,
+.quill-content em,
+.quill-content a,
+.quill-content img,
+.quill-content svg,
+.quill-content picture,
+.quill-content figure,
+.quill-content figcaption,
+.quill-content pre,
+.quill-content code,
+.quill-content ol,
+.quill-content ul,
+.quill-content li,
+.quill-content dl,
+.quill-content dt,
+.quill-content dd,
+.quill-content table,
+.quill-content th,
+.quill-content td,
+.quill-content tr,
+.quill-content thead,
+.quill-content tbody,
+.quill-content tfoot,
+.quill-content form,
+.quill-content input,
+.quill-content button,
+.quill-content select,
+.quill-content textarea,
+.quill-content details,
+.quill-content summary {
+  all: revert;
+}
+
+.quill-content h1 {
+  @apply text-xl;
+}
+
+.quill-content h2 {
+  @apply text-lg;
+}
+
+.quill-content h3,
+.quill-content h4,
+.quill-content h5,
+.quill-content h6 {
+  @apply text-base;
+}
+
+.quill-content a {
+  @apply text-ibedec-blue-600 hover:text-ibedec-blue-100;
+}
+
+.quill-content p {
+  @apply my-0;
+}
+
 .ql-video {
   @apply block max-w-full w-full h-[315px];
 }
