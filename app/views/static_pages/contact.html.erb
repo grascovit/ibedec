@@ -111,7 +111,10 @@
           </div>
           <div class="mt-1">
             <dt class="sr-only">Telefone</dt>
-            <dd>(62) 3215-7777</dd>
+            <div class="flex items-center space-x-1">
+              <%= link_to '(62) 3215-7777', 'https://wa.me/556232157777', class: 'font-medium text-ibedec-blue-600 hover:text-ibedec-blue-100' %>
+              <%= svg_icon(name: 'whatsapp', css_class: 'h-6 w-6 text-whatsapp-green-500 mb-0.5') %>
+            </div>
             <div class="flex items-center space-x-1">
               <%= link_to '(62) 99973-9305', 'https://wa.me/5562999739305', class: 'font-medium text-ibedec-blue-600 hover:text-ibedec-blue-100' %>
               <%= svg_icon(name: 'whatsapp', css_class: 'h-6 w-6 text-whatsapp-green-500 mb-0.5') %>
