@@ -44,6 +44,9 @@ RUN yarn install
 # Copy application code
 COPY --link . .
 
+# Vite build
+RUN bin/vite build
+
 # Install packages needed for deployment
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y imagemagick libvips postgresql-client && \
