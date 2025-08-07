@@ -8,6 +8,7 @@ ruby '3.2.1'
 gem 'aws-sdk-s3', '~> 1'
 gem 'cancancan', '~> 3'
 gem 'devise', '~> 4.9.0'
+gem 'dotenv-rails', '~> 3.1.8'
 gem 'image_processing', '~> 1'
 gem 'kaminari', '~> 1.2.2'
 gem 'pg', '~> 1.4.6'
@@ -17,7 +18,6 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'vite_rails'
 
 group :development, :test do
-  gem 'dotenv-rails'
   gem 'pry'
 end
 
