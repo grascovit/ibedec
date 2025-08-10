@@ -15,14 +15,14 @@
       </button>
     </div>
     <div class="hidden lg:flex lg:gap-x-12">
-      <%= link_to 'Início', root_path, class: 'text-sm font-semibold leading-6 text-gray-900 py-2' %>
-      <%= link_to 'Sobre', about_path, class: 'text-sm font-semibold leading-6 text-gray-900 py-2' %>
-      <%= link_to 'Notícias', posts_path, class: 'text-sm font-semibold leading-6 text-gray-900 py-2' %>
+      <%= link_to 'Início', root_path, class: "#{request.path == '/' ? 'text-ibedec-blue-300' : 'text-gray-900'} text-sm font-semibold leading-6 py-2" %>
+      <%= link_to 'Sobre', about_path, class: "#{request.path == '/sobre' ? 'text-ibedec-blue-300' : 'text-gray-900'} text-sm font-semibold leading-6 py-2" %>
+      <%= link_to 'Notícias', posts_path, class: "#{controller_name == 'posts' ? 'text-ibedec-blue-300' : 'text-gray-900'} text-sm font-semibold leading-6 py-2" %>
       <div class="relative inline-block py-2"
            x-data="{ isBookletsOpen: false }"
            @mouseleave = "isBookletsOpen = false">
         <button type="button"
-                class="inline-flex w-full justify-center items-center text-sm font-semibold leading-6 text-gray-900"
+                class="<%= request.path.include?('cartilhas-e-manuais') ? 'text-ibedec-blue-300' : 'text-gray-900' %> inline-flex w-full justify-center items-center text-sm font-semibold leading-6"
                 id="menu-button"
                 aria-expanded="true"
                 aria-haspopup="true"
@@ -51,8 +51,8 @@
           </div>
         </div>
       </div>
-      <%= link_to 'Decisões', judgements_path, class: 'text-sm font-semibold leading-6 text-gray-900 py-2' %>
-      <%= link_to 'Contato', contact_path, class: 'text-sm font-semibold leading-6 text-gray-900 py-2' %>
+      <%= link_to 'Decisões', judgements_path, class: "#{controller_name == 'judgements' ? 'text-ibedec-blue-300' : 'text-gray-900'} text-sm font-semibold leading-6 py-2" %>
+      <%= link_to 'Contato', contact_path, class: "#{request.path == '/contato' ? 'text-ibedec-blue-300' : 'text-gray-900'} text-sm font-semibold leading-6 py-2" %>
     </div>
   </nav>
   <!-- Mobile menu, show/hide based on menu open state. -->
@@ -75,15 +75,15 @@
       <div class="mt-6 flow-root">
         <div class="-my-6 divide-y divide-gray-500/10">
           <div class="space-y-2 py-6">
-            <%= link_to 'Início', root_path, class: '-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900' %>
-            <%= link_to 'Sobre', about_path, class: '-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900' %>
-            <%= link_to 'Notícias', posts_path, class: '-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900' %>
+            <%= link_to 'Início', root_path, class: "#{request.path == '/' ? 'bg-ibedec-blue-50 text-ibedec-blue-300' : 'text-gray-900'} -mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7" %>
+            <%= link_to 'Sobre', about_path, class: "#{request.path == '/sobre' ? 'bg-ibedec-blue-50 text-ibedec-blue-300' : 'text-gray-900'} -mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7" %>
+            <%= link_to 'Notícias', posts_path, class: "#{controller_name == 'posts' ? 'bg-ibedec-blue-50 text-ibedec-blue-300' : 'text-gray-900'} -mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7" %>
             <div class="relative block"
                  x-data="{ isBookletsMobileOpen: false }"
                  @click = "isBookletsMobileOpen = !isBookletsMobileOpen">
               <button type="button"
                       @click.outside = "isBookletsMobileOpen = false"
-                      class="inline-flex justify-center items-center -mx-3 rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900"
+                      class="<%= request.path.include?('cartilhas-e-manuais') ? 'text-ibedec-blue-300' : 'text-gray-900' %> inline-flex justify-center items-center -mx-3 rounded-lg py-2 px-3 text-base font-semibold leading-7"
                       id="menu-button"
                       aria-expanded="true"
                       aria-haspopup="true">
@@ -111,8 +111,8 @@
                 </div>
               </div>
             </div>
-            <%= link_to 'Decisões', judgements_path, class: '-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900' %>
-            <%= link_to 'Contato', contact_path, class: '-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900' %>
+            <%= link_to 'Decisões', judgements_path, class: "#{controller_name == 'judgements' ? 'bg-ibedec-blue-50 text-ibedec-blue-300' : 'text-gray-900'} -mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7" %>
+            <%= link_to 'Contato', contact_path, class: "#{request.path == '/contato' ? 'bg-ibedec-blue-50 text-ibedec-blue-300' : 'text-gray-900'} -mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7" %>
           </div>
         </div>
       </div>

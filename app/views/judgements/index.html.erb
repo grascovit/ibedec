@@ -12,19 +12,19 @@
   </div>
 
   <!-- Content -->
-  <div class="mx-auto mt-16 max-w-7xl px-6 lg:px-8">
-    <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-16 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+  <div class="mx-auto mt-8 max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-16 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-3">
       <% if @judgements.any? %>
         <% @judgements.each do |judgement| %>
-          <div>
-            <%= link_to url_for(judgement.file), class: 'block space-y-3', target: '_blank' do %>
+          <div class="flex flex-col border border-gray-100 rounded-lg shadow-lg p-6">
+            <%= link_to url_for(judgement.file), class: 'block flex flex-col h-full', target: '_blank' do %>
               <p class="text-xl font-semibold text-gray-900">
                 <%= judgement.title %>
               </p>
-              <span class="inline-flex items-center rounded-full -ml-0.5 px-3 py-0.5 text-sm font-medium bg-ibedec-blue-50 text-ibedec-blue-900">
+              <span class="mt-2 mb-5 inline-flex w-auto self-start items-center rounded-full -ml-0.5 px-3 py-0.5 text-sm font-medium bg-ibedec-blue-50 text-ibedec-blue-900">
                 <%= t("activerecord.attributes.judgement.categories.#{judgement.category}") %>
               </span>
-              <p class="text-sm text-gray-500">
+              <p class="mt-auto text-sm text-gray-500">
                 Publicada em
                 <time datetime="<%= judgement.published_at.strftime('%Y-%m-%d') %>">
                   <%= l(judgement.published_at, format: :long) %>
